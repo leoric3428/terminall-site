@@ -1,0 +1,197 @@
+:root {
+  --mavi: #0969da;
+  --mavi-acik: #4493f8;
+  --zemin: #06142a;
+  --zemin-2: #0b1f3d;
+  --kart: #0f2544;
+  --cizgi: #1d3a63;
+  --metin: #e8eef7;
+  --soluk: #a8c0e0;
+  --genislik: 1000px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, var(--zemin) 0%, var(--zemin-2) 100%);
+  background-attachment: fixed;
+  color: var(--metin);
+  font: 17px/1.65 system-ui, -apple-system, "Segoe UI", Ubuntu, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+a { color: var(--mavi-acik); }
+
+.sinir {
+  max-width: var(--genislik);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---- üst çubuk ---- */
+header.ust {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(6, 20, 42, 0.86);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--cizgi);
+}
+
+.ust .sinir {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 60px;
+}
+
+.marka {
+  font-weight: 700;
+  font-size: 19px;
+  color: var(--metin);
+  text-decoration: none;
+  letter-spacing: -0.2px;
+}
+
+.ust nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 15px;
+}
+
+.ust nav a { color: var(--soluk); text-decoration: none; }
+.ust nav a:hover { color: var(--metin); }
+
+.dil {
+  border: 1px solid var(--cizgi);
+  background: transparent;
+  color: var(--soluk);
+  border-radius: 999px;
+  padding: 5px 12px;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+.dil:hover { color: var(--metin); border-color: var(--mavi); }
+
+/* ---- kahraman ---- */
+.kahraman {
+  padding: 72px 0 40px;
+  text-align: center;
+}
+
+.kahraman h1 {
+  font-size: clamp(34px, 6vw, 52px);
+  line-height: 1.1;
+  margin: 0 0 16px;
+  letter-spacing: -1px;
+}
+
+.kahraman p.buyuk {
+  font-size: clamp(18px, 2.6vw, 21px);
+  color: var(--soluk);
+  max-width: 640px;
+  margin: 0 auto 28px;
+}
+
+.rozet {
+  display: inline-block;
+  border: 1px solid var(--cizgi);
+  border-radius: 999px;
+  padding: 8px 18px;
+  color: var(--soluk);
+  font-size: 15px;
+}
+
+/* ---- ekran görüntüleri ---- */
+.kareler {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 18px;
+  padding: 36px 0 10px;
+}
+
+.kareler img {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid var(--cizgi);
+  display: block;
+}
+
+/* ---- bölümler ---- */
+section { padding: 44px 0; }
+
+h2 {
+  font-size: 26px;
+  margin: 0 0 8px;
+  letter-spacing: -0.4px;
+}
+
+h2 + p.alt {
+  color: var(--soluk);
+  margin: 0 0 24px;
+}
+
+.izgara {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.kart {
+  background: var(--kart);
+  border: 1px solid var(--cizgi);
+  border-radius: 14px;
+  padding: 20px 22px;
+}
+
+.kart h3 {
+  margin: 0 0 8px;
+  font-size: 17px;
+  color: var(--mavi-acik);
+}
+
+.kart p, .kart ul { margin: 0; color: var(--soluk); font-size: 15.5px; }
+.kart ul { padding-left: 18px; }
+.kart li { margin: 3px 0; }
+
+/* ---- metin sayfaları ---- */
+.yazi { max-width: 760px; }
+.yazi h1 { font-size: 32px; margin: 40px 0 6px; letter-spacing: -0.5px; }
+.yazi .tarih { color: var(--soluk); font-size: 15px; margin: 0 0 28px; }
+.yazi h2 { margin-top: 36px; }
+.yazi li { margin: 8px 0; }
+.yazi strong { color: var(--metin); }
+.yazi p, .yazi li { color: var(--soluk); }
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--cizgi);
+  margin: 44px 0;
+}
+
+/* ---- alt ---- */
+footer {
+  border-top: 1px solid var(--cizgi);
+  margin-top: 48px;
+  padding: 28px 0 44px;
+  color: var(--soluk);
+  font-size: 15px;
+}
+
+footer .sinir { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+footer a { color: var(--soluk); }
+
+/* ---- dil ---- */
+[data-dil] { display: none; }
+html[lang="en"] [data-dil="en"],
+html[lang="tr"] [data-dil="tr"] { display: block; }
+html[lang="en"] li[data-dil="en"],
+html[lang="tr"] li[data-dil="tr"] { display: list-item; }
+html[lang="en"] span[data-dil="en"],
+html[lang="tr"] span[data-dil="tr"] { display: inline; }

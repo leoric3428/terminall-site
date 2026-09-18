@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>terminALL — Support / Destek</title>
+<meta name="description" content="terminALL support: contact, common questions about connecting, Windows setup, Wake-on-LAN, live screen and purchases.">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="ust">
+  <div class="sinir">
+    <a class="marka" href="/">terminALL</a>
+    <nav>
+      <a href="/support"><span data-dil="en">Support</span><span data-dil="tr">Destek</span></a>
+      <a href="/privacy"><span data-dil="en">Privacy</span><span data-dil="tr">Gizlilik</span></a>
+      <button class="dil" id="dil-dugme" type="button">Türkçe</button>
+    </nav>
+  </div>
+</header>
+
+<main class="sinir">
+  <article class="yazi">
+
+    <div data-dil="en">
+      <h1>Support</h1>
+      <p class="tarih">Write to <a href="mailto:destek@terminall.app">destek@terminall.app</a> —
+        a real person reads it.</p>
+
+      <p>When you report a problem, it helps a lot if you say which operating system the computer
+        runs, what the app showed on screen, and what you had already tried.</p>
+
+      <h2>The app cannot connect</h2>
+      <p>The computer has to be running an SSH server and it has to be reachable.</p>
+      <ul>
+        <li><strong>macOS:</strong> System Settings → General → Sharing → turn on
+          <em>Remote Login</em>.</li>
+        <li><strong>Windows:</strong> use <em>Set up a Windows computer</em> in the app. It
+          installs and starts the OpenSSH server, opens port 22 in the firewall and adds this
+          app's key. Nothing is sent to the internet.</li>
+        <li><strong>Linux:</strong> install and start <code>openssh-server</code>.</li>
+        <li>If the app says the computer refused the connection, the machine is on but SSH is not
+          listening, or the port is different.</li>
+      </ul>
+
+      <h2>Windows rejects my password</h2>
+      <p>If the computer signs in with a Microsoft account and only a PIN or Windows Hello, Windows
+        does not allow SSH password sign-in. On the computer: Settings → Accounts → Sign-in options
+        → turn off "only allow Windows Hello sign-in", lock the screen and sign in once
+        <em>with the password</em>. Then try again. The user name is the local name on the
+        computer, not the e-mail address.</p>
+
+      <h2>Waking the computer does not work</h2>
+      <p>Wake-on-LAN needs three things: the network card must accept wake packets (the app can
+        turn this on), the setting must also be enabled in the BIOS/UEFI if the computer was fully
+        shut down, and the packet has to reach the machine. Wi-Fi often cannot carry it — a wired
+        connection is much more reliable. If your phone is on another network, another computer
+        you saved that is awake on the same network relays it.</p>
+
+      <h2>The live screen does not start</h2>
+      <p>The screen feature needs a streaming host on the computer; the app offers to install and
+        start it for you the first time. If it was already installed by hand, the app may need to
+        pair with it once. On Linux, screen sharing goes through the desktop's screen-capture
+        permission — the first time, the system asks you on the computer.</p>
+
+      <h2>Connecting from outside my home</h2>
+      <p>On your own network the local address is enough. Outside, the computer needs an address
+        that is reachable from the internet, or a VPN between your phone and your computer. Once
+        you have connected once, the app fills in that second address on its own.</p>
+
+      <h2>Purchases</h2>
+      <p>Membership is handled by Apple. Use <em>Restore purchases</em> on the membership screen if
+        a purchase does not show up on a new device. Subscriptions are cancelled from your App
+        Store account settings, not from inside the app; the app cannot cancel them for you.
+        Your saved servers and keys stay yours even without a membership: you can view, edit and
+        export them.</p>
+
+      <h2>Deleting your data</h2>
+      <p>Everything the app stores is on your device. Deleting the app deletes it. If you turned on
+        iCloud sync, turn it off before deleting to remove the copy in your iCloud account.</p>
+    </div>
+
+    <div data-dil="tr">
+      <h1>Destek</h1>
+      <p class="tarih"><a href="mailto:destek@terminall.app">destek@terminall.app</a> adresine yaz —
+        gerçek bir insan okuyor.</p>
+
+      <p>Sorunu yazarken bilgisayarın işletim sistemini, uygulamanın ekranda ne gösterdiğini ve
+        daha önce ne denediğini belirtirsen çok işe yarar.</p>
+
+      <h2>Uygulama bağlanamıyor</h2>
+      <p>Bilgisayarda bir SSH sunucusu çalışıyor ve erişilebilir olmalı.</p>
+      <ul>
+        <li><strong>macOS:</strong> Sistem Ayarları → Genel → Paylaşım → <em>Uzaktan Oturum
+          Açma</em>'yı aç.</li>
+        <li><strong>Windows:</strong> uygulamadaki <em>Windows bilgisayar hazırlığı</em>'nı
+          kullan. OpenSSH sunucusunu kurup başlatır, güvenlik duvarında 22 numaralı kapıyı açar ve
+          bu uygulamanın anahtarını ekler. İnternete hiçbir şey gönderilmez.</li>
+        <li><strong>Linux:</strong> <code>openssh-server</code> kur ve başlat.</li>
+        <li>Uygulama "bilgisayar bağlantıyı reddetti" diyorsa makine açık ama SSH dinlemiyor ya da
+          kapı numarası farklı demektir.</li>
+      </ul>
+
+      <h2>Windows parolamı kabul etmiyor</h2>
+      <p>Bilgisayar Microsoft hesabıyla ve yalnızca PIN / Windows Hello ile açılıyorsa Windows SSH
+        parola girişine izin vermiyor. Bilgisayarda: Ayarlar → Hesaplar → Oturum açma seçenekleri →
+        "yalnızca Windows Hello ile oturum açılsın" ayarını kapat, ekranı kilitle ve bir kez
+        <em>parolayla</em> gir. Sonra tekrar dene. Kullanıcı adı bilgisayardaki yerel addır,
+        e-posta adresi değil.</p>
+
+      <h2>Bilgisayarı uyandıramıyorum</h2>
+      <p>Wake-on-LAN üç şey ister: ağ kartı uyandırma paketlerini kabul etmeli (uygulama bunu
+        açabiliyor), bilgisayar tamamen kapatıldıysa ayar BIOS/UEFI'de de açık olmalı ve paket
+        makineye ulaşmalı. Kablosuz ağ çoğu zaman bu paketi taşıyamıyor; kablolu bağlantı çok daha
+        güvenilir. Telefonun başka bir ağdaysa, aynı ağda uyanık olan başka bir kayıtlı bilgisayar
+        paketi iletir.</p>
+
+      <h2>Canlı ekran başlamıyor</h2>
+      <p>Ekran özelliği bilgisayarda bir yayın sunucusu ister; uygulama ilk seferinde kurup
+        başlatmayı teklif eder. Daha önce elle kurulduysa uygulamanın bir kez eşleşmesi
+        gerekebilir. Linux'ta ekran paylaşımı masaüstünün ekran yakalama izninden geçer — ilk
+        seferde sistem bilgisayarda sana sorar.</p>
+
+      <h2>Ev dışından bağlanmak</h2>
+      <p>Kendi ağındayken yerel adres yeter. Dışarıdayken bilgisayarın internetten erişilebilir bir
+        adresi ya da telefonunla bilgisayarın arasında bir VPN gerekir. Bir kez bağlandıktan sonra
+        uygulama bu ikinci adresi kendiliğinden doldurur.</p>
+
+      <h2>Satın almalar</h2>
+      <p>Üyeliği Apple yürütür. Yeni bir cihazda alımın görünmezse üyelik ekranındaki <em>Satın
+        alımları geri yükle</em>'yi kullan. Abonelik iptali App Store hesap ayarlarından yapılır,
+        uygulamanın içinden değil; uygulama senin adına iptal edemez. Kayıtlı sunucuların ve
+        anahtarların üyelik olmadan da senindir: görebilir, düzenleyebilir ve dışa
+        aktarabilirsin.</p>
+
+      <h2>Verilerini silmek</h2>
+      <p>Uygulamanın sakladığı her şey cihazında. Uygulamayı silmek onları da siler. iCloud
+        eşitlemeyi açtıysan, iCloud hesabındaki kopyanın da gitmesi için silmeden önce eşitlemeyi
+        kapat.</p>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <div class="sinir">
+    <span>terminALL</span>
+    <a href="/privacy"><span data-dil="en">Privacy Policy</span><span data-dil="tr">Gizlilik Politikası</span></a>
+    <a href="/support"><span data-dil="en">Support</span><span data-dil="tr">Destek</span></a>
+    <a href="mailto:destek@terminall.app">destek@terminall.app</a>
+  </div>
+</footer>
+
+<script src="/lang.js"></script>
+</body>
+</html>
