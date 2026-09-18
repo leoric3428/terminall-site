@@ -1,0 +1,11 @@
+{
+  // Cloudflare Workers: yalnız durağan dosya sunan bir Worker (kod yok).
+  // Derleme adımı yok; public/ içindeki dosyalar olduğu gibi yayınlanır.
+  // html_handling varsayılanı /privacy -> /privacy/index.html eşlemesini yapar.
+  "name": "terminall-site",
+  "compatibility_date": "2026-09-18",
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page"
+  }
+}
