@@ -101,12 +101,15 @@ header.ust {
 
 .rozet {
   display: inline-block;
-  border: 1px solid var(--cizgi);
   border-radius: 999px;
-  padding: 8px 18px;
-  color: var(--soluk);
-  font-size: 15px;
+  padding: 10px 22px;
+  background: var(--mavi);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
 }
+.rozet:hover { background: var(--mavi-acik); }
 
 /* ---- ekran görüntüleri ---- */
 .kareler {
